@@ -24,6 +24,16 @@ services:
     depends_on:
       - auth
 
+  product:
+    build:
+      context: ../CTSE-Product-and-Bundle-Service
+    container_name: product
+    env_file:
+      - ../CTSE-Product-and-Bundle-Service/.env
+    ports:
+      - "8080:8080"
+      - "50053:50053"
+
   gateway:
     build: .
     container_name: gateway
