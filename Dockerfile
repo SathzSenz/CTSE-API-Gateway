@@ -1,7 +1,7 @@
 FROM nginx:stable-alpine
 
 COPY nginx/nginx.conf /etc/nginx/nginx.conf
-COPY nginx/routes.conf /etc/nginx/routes.conf
+COPY nginx/routes.conf.template /etc/nginx/templates/routes.conf.template
 
 EXPOSE 80
 

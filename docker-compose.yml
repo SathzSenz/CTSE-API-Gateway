@@ -37,6 +37,10 @@ services:
   gateway:
     build: .
     container_name: gateway
+    environment:
+      - AUTH_UPSTREAM=auth:4000
+      - ORDER_UPSTREAM=order:6969
+      - PRODUCT_UPSTREAM=product:8080
     ports:
       - "80:80"
     depends_on:
